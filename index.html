@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UI/UX Resources</title>
+  <style>
+    :root {
+      --bg: #0f0f11;
+      --surface: #18181c;
+      --surface-alt: #1f1f25;
+      --border: #2a2a32;
+      --accent: #7c6ef2;
+      --accent-soft: #a898f8;
+      --text: #e8e8f0;
+      --text-muted: #8888a0;
+      --tag-bg: #252530;
+      --radius: 12px;
+      --radius-sm: 8px;
+      --transition: 0.2s ease;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    /* ── Header ─────────────────────────────────── */
+    header {
+      border-bottom: 1px solid var(--border);
+      padding: 2rem 0 1.75rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      color: var(--text);
+    }
+
+    header h1 span {
+      color: var(--accent-soft);
+    }
+
+    header p {
+      margin-top: 0.5rem;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    /* ── Layout ─────────────────────────────────── */
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 4rem;
+    }
+
+    /* ── Section ─────────────────────────────────── */
+    .section {
+      margin-bottom: 3rem;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .section-header .icon {
+      font-size: 1.1rem;
+    }
+
+    .section-header h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+    }
+
+    .section-header::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+      margin-left: 0.5rem;
+    }
+
+    /* ── Cards grid ─────────────────────────────── */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1rem;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.2rem 1.3rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      text-decoration: none;
+      color: inherit;
+      transition: border-color var(--transition), background var(--transition), transform var(--transition);
+    }
+
+    .card:hover {
+      border-color: var(--accent);
+      background: var(--surface-alt);
+      transform: translateY(-2px);
+    }
+
+    .card-top {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+    }
+
+    .card-favicon {
+      width: 24px;
+      height: 24px;
+      border-radius: 6px;
+      flex-shrink: 0;
+      background: var(--tag-bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .card-favicon img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .card-name {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .card-desc {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-top: 0.3rem;
+    }
+
+    .tag {
+      font-size: 0.7rem;
+      font-weight: 500;
+      padding: 0.15rem 0.5rem;
+      border-radius: 999px;
+      background: var(--tag-bg);
+      color: var(--accent-soft);
+      letter-spacing: 0.02em;
+    }
+
+    /* ── Footer ─────────────────────────────────── */
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 0.8rem;
+    }
+
+    /* ── Responsive ─────────────────────────────── */
+    @media (max-width: 600px) {
+      header h1 { font-size: 1.5rem; }
+      .cards { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>UI/UX <span>Resources</span></h1>
+  <p>Eine kuratierte Sammlung von Links und Tools für den Unterricht</p>
+</header>
+
+<main>
+
+  <!-- ── Design Tools ─────────────────────────────── -->
+  <section class="section">
+    <div class="section-header">
+      <span class="icon">🛠</span>
+      <h2>Design Tools</h2>
+    </div>
+    <div class="cards">
+
+      <a class="card" href="https://www.figma.com" target="_blank" rel="noopener">
+        <div class="card-top">
+          <div class="card-favicon"><img src="https://www.figma.com/favicon.ico" alt="" /></div>
+          <span class="card-name">Figma</span>
+        </div>
+        <p class="card-desc">Browser-basiertes Design- und Prototyping-Tool. Kollaborativ in Echtzeit.</p>
+        <div class="card-tags"><span class="tag">Prototyping</span><span class="tag">Kollaborativ</span><span class="tag">Kostenlos</span></div>
+      </a>
+
+      <a class="card" href="https://penpot.app" target="_blank" rel="noopener">
+        <div class="card-top">
+          <div class="card-favicon"><img src="https://penpot.app/favicon.ico" alt="" /></div>
+          <span class="card-name">Penpot</span>
+        </div>
+        <p class="card-desc">Open-Source-Alternative zu Figma. Selbst hostbar, keine Vendor-Lock-ins.</p>
+        <div class="card-tags"><span class="tag">Open Source</span><span class="tag">Prototyping</span></div>
+      </a>
+
+      <a class="card" href="https://excalidraw.com" target="_blank" rel="noopener">
+        <div class="card-top">
+          <div class="card-favicon"><img src="https://excalidraw.com/favicon.ico" alt="" /></div>
+          <span class="card-name">Excalidraw</span>
+        </div>
+        <p class="card-desc">Virtuelles Whiteboard für schnelle Wireframes und Skizzen im Handzeichnungs-Look.</p>
+        <div class="card-tags"><span class="tag">Wireframing</span><span class="tag">Kostenlos</span></div>
+      </a>
+
+      <a class="card" href="https://whimsical.com" target="_blank" rel="noopener">
+        <div class="card-top">
+          <div class="card-favicon"><img src="https://whimsical.com/favicon.ico" alt="" /></div>
+          <span class="card-name">Whimsical</span>
+        </div>
+        <p class="card-desc">Flowcharts, Wireframes und Mind Maps in einem aufgeräumten Tool.</p>
+        <div class="card-tags"><span class="tag">Wireframing</span><span class="tag">Flowcharts</span></div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ── Farbe ─────────────────────────────────────── -->
+  <section class="section">
+    <div class="section-header">
+      <span class="icon">🎨</span>
+      <h2>Farbe & Paletten</h2>
+    </div>
+    <div class="cards">
+
+      <a class="card" href="https://coolors.co" target="_blank" rel="noopener">
+        <div class="card-top">
+          <div class="card-favicon"><img src="https://coolors.co/favicon.ico" alt="" /></div>
+          <span class="card-name">Coolors</span>
+        </div>
+        <p class="card-desc">Farbpaletten-Generator mit Tastendruck-Bedienung. Exportiert in viele Formate.</p>
+        <div class="card-tags"><span class="tag">Farbe</span><span class="tag">Kostenlos</span></div>
+      </a>
+
+      <a class="card" href="https://color.adobe.com" target="_blank" rel="noopener">
+        <div class="card-top">
+          <div class="card-favicon"><img src="https://color.adobe.com/favicon.ico" alt="" /></div>
+          <span class="card-name">Adobe Color</span>
+        </div>
+        <p class="card-desc">Farbharmonien nach klassischen Regeln (Komplementär, Triade, …) erstellen.</p>
+        <div class="card-tags"><span class="tag">Farbe</span><span class="tag">Adobe</span></div>
+      </a>
+
+      <a class="card" href="https://palettte.app" target="_blank" rel="noopener">
+        <div class="card-top">
+          <div class="card-favicon"><img src="https://palettte.app/favicon.ico" alt="" /></div>
+          <span class="card-name">Palettte</span>
+        </div>
+        <p class="card-desc">Professionelle Farbskalen bauen – ideal für Design-Systeme.</p>
+        <div class="card-tags"><span class="tag">Farbe</span><span class="tag">Design System</span></div>
+      </a>
+
+      <a class="card" href="https://www.happyhues.co" target="_blank" rel="noopener">
+        <div class="card-top">
+          <div class="card-favicon"><img src="https://www.happyhues.co/favicon.ico" alt="" /></div>
+          <span class="card-name">Happy Hues</span>
+        </div>
+        <p class="card-desc">Kuratierte Farbpaletten im echten UI-Kontext – nicht nur als Chips.</p>
+        <div class="card-tags"><span class="tag">Farbe</span><span class="tag">Inspiration</span></div>
+      </a>
+
+      <a class="card" href="https://contrast-ratio.com" target="_blank" rel="noopener">
+        <div class="card-top">
+          <div class="card-favicon">🔍</div>
+          <span class="card-name">Contrast Ratio</span>
+        </div>
+        <p class="card-desc">WCAG-Kontrastverhältnis zweier Farben sofort prüfen.</p>
+        <div class="card-tags"><span class="tag">Accessibility</span><span class="tag">WCAG</span></div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ── Typografie ────────────────────────────────── -->
+  <section class="section">
+    <div class="section-header">
+      <span class="icon">🔤</span>
+      <h2>Typografie</h2>
+    </div>
+    <div class="cards">
+
+      <a class="card" href="https://fonts.google.com" target="_blank" rel="noopener">
+        <div class="card-top">
+          <div class="card-favicon"><img src="https://fonts.google.com/favicon.ico" alt="" /></div>
+          <span class="card-name">Google Fonts</span>
+        </div>
+        <p class="card-desc">Tausende kostenlose Webfonts, direkt per CDN einbindbar.</p>
+        <div class="card-tags"><span class="tag">Schrift</span><span class="tag">Kostenlos</span></div>
+      </a>
+
+      <a class="card" href="https://fontjoy.com" target="_blank" rel="noopener">
+        <div class="card-top">
+          <div class="card-favicon"><img src="https://fontjoy.com/favicon.ico" alt="" /></div>
+          <span class="card-name">Fontjoy</span>
+        </div>
+        <p class="card-desc">KI-gestützte Schriftpaarungen aus Google Fonts finden.</p>
+        <div class="card-tags"><span class="tag">Schrift</span><span class="tag">KI</span></div>
+      </a>
+
+      <a class="card" href="https://typescale.com" target="_blank" rel="noopener">
+        <div class="card-top">
+          <div class="card-favicon"><img src="https://typescale.com/favicon.ico" alt="" /></div>
+          <span class="card-name">Type Scale</span>
+        </div>
+        <p class="card-desc">Typografische Skala nach Modular-Scale-Verhältnissen visuell definieren.</p>
+        <div class="card-tags"><span class="tag">Schrift</span><span class="tag">Skala</span></div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ── Icons & Assets ────────────────────────────── -->
+  <section class="section">
+    <div class="section-header">
+      <span class="icon">✦</span>
+      <h2>Icons & Assets</h2>
+    </div>
+    <div class="cards">
+
+      <a class="card" href="https://phosphoricons.com" target="_blank" rel="noopener">
+        <div class="card-top">
+          <div class="card-favicon"><img src="https://phosphoricons.com/favicon.ico" alt="" /></div>
+          <span class="card-name">Phosphor Icons</span>
+        </div>
+        <p class="card-desc">Flexibles Icon-Set mit 6 Stilen. SVG, React, Vue, Flutter – alle verfügbar.</p>
+        <div class="card-tags"><span class="tag">Icons</span><span class="tag">Open Source</span></div>
+      </a>
+
+      <a class="card" href="https://heroicons.com" target="_blank" rel="noopener">
+        <div class="card-top">
+          <div class="card-favicon"><img src="https://heroicons.com/favicon.ico" alt="" /></div>
+          <span class="card-name">Heroicons</span>
+        </div>
+        <p class="card-desc">Saubere SVG-Icons von den Machern von Tailwind CSS. Outline & Solid.</p>
+        <div class="card-tags"><span class="tag">Icons</span><span class="tag">MIT</span></div>
+      </a>
+
+      <a class="card" href="https://undraw.co/illustrations" target="_blank" rel="noopener">
+        <div class="card-top">
+          <div class="card-favicon"><img src="https://undraw.co/favicon.ico" alt="" /></div>
+          <span class="card-name">unDraw</span>
+        </div>
+        <p class="card-desc">Kostenlose SVG-Illustrationen mit anpassbarer Akzentfarbe.</p>
+        <div class="card-tags"><span class="tag">Illustrationen</span><span class="tag">SVG</span><span class="tag">Kostenlos</span></div>
+      </a>
+
+      <a class="card" href="https://storyset.com" target="_blank" rel="noopener">
+        <div class="card-top">
+          <div class="card-favicon"><img src="https://storyset.com/favicon.ico" alt="" /></div>
+          <span class="card-name">Storyset</span>
+        </div>
+        <p class="card-desc">Animierbare Illustrationen in mehreren Stilen. Kostenlos für Bildung.</p>
+        <div class="card-tags"><span class="tag">Illustrationen</span><span class="tag">Animation</span></div>
+      </a>
+
+      <a class="card" href="https://unsplash.com" target="_blank" rel="noopener">
+        <div class="card-top">
+          <div class="card-favicon"><img src="https://unsplash.com/favicon.ico" alt="" /></div>
+          <span class="card-name">Unsplash</span>
+        </div>
+        <p class="card-desc">Hochauflösende Stockfotos – kostenlos und ohne Namensnennung nutzbar.</p>
+        <div class="card-tags"><span class="tag">Fotos</span><span class="tag">Kostenlos</span></div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ── Inspiration ───────────────────────────────── -->
+  <section class="section">
+    <div class="section-header">
+      <span class="icon">💡</span>
+      <h2>Inspiration</h2>
+    </div>
+    <div class="cards">
+
+      <a class="card" href="https://dribbble.com" target="_blank" rel="noopener">
+        <div class="card-top">
+          <div class="card-favicon"><img src="https://dribbble.com/favicon.ico" alt="" /></div>
+          <span class="card-name">Dribbble</span>
+        </div>
+        <p class="card-desc">Showcase-Plattform für UI- und Grafikdesign-Arbeiten weltweit.</p>
+        <div class="card-tags"><span class="tag">Inspiration</span><span class="tag">Community</span></div>
+      </a>
+
+      <a class="card" href="https://www.behance.net" target="_blank" rel="noopener">
+        <div class="card-top">
+          <div class="card-favicon"><img src="https://www.behance.net/favicon.ico" alt="" /></div>
+          <span class="card-name">Behance</span>
+        </div>
+        <p class="card-desc">Portfolios und Case Studies von Designern weltweit – Fokus auf Prozess.</p>
+        <div class="card-tags"><span class="tag">Inspiration</span><span class="tag">Portfolio</span></div>
+      </a>
+
+      <a class="card" href="https://mobbin.com" target="_blank" rel="noopener">
+        <div class="card-top">
+          <div class="card-favicon"><img src="https://mobbin.com/favicon.ico" alt="" /></div>
+          <span class="card-name">Mobbin</span>
+        </div>
+        <p class="card-desc">Screenshots echter Apps aus dem App Store – nach Flows und Screens durchsuchbar.</p>
+        <div class="card-tags"><span class="tag">Mobile</span><span class="tag">Pattern</span></div>
+      </a>
+
+      <a class="card" href="https://land-book.com" target="_blank" rel="noopener">
+        <div class="card-top">
+          <div class="card-favicon"><img src="https://land-book.com/favicon.ico" alt="" /></div>
+          <span class="card-name">Land-book</span>
+        </div>
+        <p class="card-desc">Kuratierte Landing Pages für Webdesign-Inspiration.</p>
+        <div class="card-tags"><span class="tag">Landing Pages</span><span class="tag">Web</span></div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ── Lernen ────────────────────────────────────── -->
+  <section class="section">
+    <div class="section-header">
+      <span class="icon">📚</span>
+      <h2>Lernen & Lesen</h2>
+    </div>
+    <div class="cards">
+
+      <a class="card" href="https://www.nngroup.com/articles/" target="_blank" rel="noopener">
+        <div class="card-top">
+          <div class="card-favicon"><img src="https://www.nngroup.com/favicon.ico" alt="" /></div>
+          <span class="card-name">Nielsen Norman Group</span>
+        </div>
+        <p class="card-desc">Forschungsbasierte UX-Artikel. Die wichtigste Wissensquelle für UX-Profis.</p>
+        <div class="card-tags"><span class="tag">UX</span><span class="tag">Research</span></div>
+      </a>
+
+      <a class="card" href="https://lawsofux.com" target="_blank" rel="noopener">
+        <div class="card-top">
+          <div class="card-favicon"><img src="https://lawsofux.com/favicon.ico" alt="" /></div>
+          <span class="card-name">Laws of UX</span>
+        </div>
+        <p class="card-desc">Die wichtigsten psychologischen Prinzipien im UX-Design – visuell aufbereitet.</p>
+        <div class="card-tags"><span class="tag">UX</span><span class="tag">Psychologie</span></div>
+      </a>
+
+      <a class="card" href="https://www.refactoringui.com" target="_blank" rel="noopener">
+        <div class="card-top">
+          <div class="card-favicon"><img src="https://www.refactoringui.com/favicon.ico" alt="" /></div>
+          <span class="card-name">Refactoring UI</span>
+        </div>
+        <p class="card-desc">Buch + Tipps: UI-Design für Entwickler. Praktisch und direkt anwendbar.</p>
+        <div class="card-tags"><span class="tag">UI</span><span class="tag">Buch</span></div>
+      </a>
+
+      <a class="card" href="https://checklist.design" target="_blank" rel="noopener">
+        <div class="card-top">
+          <div class="card-favicon"><img src="https://checklist.design/favicon.ico" alt="" /></div>
+          <span class="card-name">Checklist Design</span>
+        </div>
+        <p class="card-desc">Best-Practice-Checklisten für gängige UI-Komponenten und Flows.</p>
+        <div class="card-tags"><span class="tag">Best Practice</span><span class="tag">Checkliste</span></div>
+      </a>
+
+      <a class="card" href="https://www.designbetter.co/design-systems-handbook" target="_blank" rel="noopener">
+        <div class="card-top">
+          <div class="card-favicon">📖</div>
+          <span class="card-name">Design Systems Handbook</span>
+        </div>
+        <p class="card-desc">Kostenloses E-Book über Aufbau und Pflege von Design Systemen.</p>
+        <div class="card-tags"><span class="tag">Design System</span><span class="tag">Kostenlos</span></div>
+      </a>
+
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  HTL Leonding · UI/UX Unterlagen &mdash; wird laufend erweitert
+</footer>
+
+</body>
+</html>
